@@ -2,45 +2,73 @@ import { motion } from "framer-motion";
 
 const ProblemSection = () => {
   return (
-    <section className="section-padding relative">
-      <div className="max-w-4xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">
-            <span className="text-gradient-gold">"Ela não está mais lá."</span>
-          </h2>
-          <p className="text-muted-foreground text-lg md:text-xl font-body font-light">
-            Atenção não espera. Leads também não.
-          </p>
-        </motion.div>
+    <section id="problema" className="section-pad relative overflow-hidden">
+      {/* Diagonal line */}
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="bg-glass border border-glass rounded-2xl p-8 md:p-12 space-y-6"
-        >
-          <p className="text-foreground/80 text-lg font-body font-light leading-relaxed">
-            Hoje, para vender ou alugar, a maioria dos corretores depende de grandes portais imobiliários. Eles são parte do jogo. Mas também definem as regras.
-          </p>
-          <p className="text-foreground/80 text-lg font-body font-light leading-relaxed">
-            O corretor anuncia, investe para destacar seus imóveis e compartilha o link do portal com seus próprios contatos. O tráfego acontece. A atenção chega. Mas nem sempre fica.
-          </p>
-          <p className="text-foreground/80 text-lg font-body font-light leading-relaxed">
-            Quando um cliente acessa um portal, ele pode falar com quem indicou o imóvel. Ou pode simplesmente escolher outro anúncio — e desaparecer do radar.
-          </p>
-          <blockquote className="border-l-2 border-primary pl-6 py-2">
-            <p className="text-foreground italic text-lg font-body">
-              "Nesse modelo, o corretor só conhece quem entra em contato. Todo o resto pertence ao portal."
-            </p>
-          </blockquote>
-        </motion.div>
+      <div className="max-w-5xl mx-auto">
+        <div className="grid lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-20 items-start">
+          {/* Left — big quote */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="border-l-2 border-primary pl-6 md:pl-8">
+              <h2 className="text-3xl md:text-5xl lg:text-6xl font-display font-bold leading-[1.1] mb-6">
+                <span className="text-neon">"Ela não</span>
+                <br />
+                <span className="text-foreground">está mais</span>
+                <br />
+                <span className="text-neon">lá."</span>
+              </h2>
+              <p className="text-muted-foreground text-lg font-body font-light">
+                Atenção não espera.<br />Leads também não.
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Right — content cards */}
+          <div className="space-y-4">
+            {[
+              "Hoje, a maioria dos corretores depende de grandes portais imobiliários. Eles são parte do jogo. Mas também definem as regras.",
+              "O corretor anuncia, investe, compartilha o link. O tráfego acontece. Mas nem sempre fica.",
+              "Quando um cliente acessa um portal, ele pode simplesmente escolher outro anúncio — e desaparecer do radar.",
+            ].map((text, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: i * 0.15 }}
+                className="border border-neon-hover p-5 md:p-6 bg-secondary/50"
+              >
+                <div className="flex items-start gap-4">
+                  <span className="font-mono text-xs text-primary/60 mt-1 shrink-0">
+                    0{i + 1}
+                  </span>
+                  <p className="text-foreground/80 font-body font-light text-sm md:text-base leading-relaxed">
+                    {text}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="border-2 border-neon p-5 md:p-6 bg-primary/[0.03]"
+              style={{ boxShadow: "var(--neon-glow)" }}
+            >
+              <p className="text-foreground font-mono text-sm italic leading-relaxed">
+                "Nesse modelo, o corretor só conhece quem entra em contato. Todo o resto pertence ao portal."
+              </p>
+            </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   );
