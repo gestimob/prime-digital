@@ -1,80 +1,81 @@
 import { motion } from "framer-motion";
-import { Gauge, MousePointerClick, BarChart3 } from "lucide-react";
 
 const ProductSection = () => {
   return (
-    <section className="section-padding relative overflow-hidden">
-      {/* Background accent */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-primary/3 blur-[150px] pointer-events-none" />
-
-      <div className="max-w-6xl mx-auto relative z-10">
+    <section id="produto" className="section-pad relative overflow-hidden">
+      <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">
-            Gestão inteligente em uma interface de{" "}
-            <span className="text-gradient-gold">alta performance.</span>
+          <div className="flex items-center gap-4 mb-6">
+            <div className="w-12 h-px bg-primary" />
+            <span className="font-mono text-xs tracking-[0.3em] uppercase text-primary">
+              Interface
+            </span>
+          </div>
+          <h2 className="text-3xl md:text-5xl font-display font-bold">
+            Gestão inteligente em
+            <br />
+            <span className="text-gradient-neon">alta performance.</span>
           </h2>
-          <p className="text-muted-foreground text-lg font-body font-light max-w-2xl mx-auto">
-            Uma plataforma completa, pensada para ser intuitiva e poderosa, dando total controle ao corretor.
-          </p>
         </motion.div>
 
-        {/* Product mockup area */}
+        {/* Product mockup with neon border */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={{ once: true }}
           transition={{ duration: 1 }}
-          className="relative mb-20"
+          className="relative mb-16"
         >
-          <div className="bg-glass border border-glass rounded-2xl p-2 glow-gold">
-            <div className="bg-secondary rounded-xl aspect-[16/9] flex items-center justify-center overflow-hidden">
+          {/* Corner marks */}
+          <div className="absolute -top-2 -left-2 w-6 h-6 border-t-2 border-l-2 border-primary" />
+          <div className="absolute -top-2 -right-2 w-6 h-6 border-t-2 border-r-2 border-primary" />
+          <div className="absolute -bottom-2 -left-2 w-6 h-6 border-b-2 border-l-2 border-primary" />
+          <div className="absolute -bottom-2 -right-2 w-6 h-6 border-b-2 border-r-2 border-primary" />
+
+          <div className="border border-primary/30 p-1" style={{ boxShadow: "var(--neon-glow-subtle)" }}>
+            <div className="aspect-[16/9] bg-secondary overflow-hidden relative">
               <img
                 src="https://ufsyauqlbjdyfipckjxs.supabase.co/storage/v1/object/public/assets/dash_principal.jpeg"
-                alt="Interface da Vitrine Premium - Painel administrativo"
-                className="w-full h-full object-cover rounded-xl"
+                alt="Interface da Vitrine Premium"
+                className="w-full h-full object-cover"
               />
+              {/* Scanline overlay */}
+              <div className="absolute inset-0 bg-gradient-to-b from-primary/[0.02] via-transparent to-primary/[0.02] pointer-events-none" />
             </div>
+          </div>
+
+          {/* Floating label */}
+          <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-background border border-primary/40 px-6 py-2">
+            <span className="font-mono text-xs tracking-[0.2em] uppercase text-primary">
+              PREVIEW v2.0
+            </span>
           </div>
         </motion.div>
 
-        {/* Features row */}
-        <div className="grid md:grid-cols-3 gap-8">
+        {/* Feature stats */}
+        <div className="grid grid-cols-3 gap-px">
           {[
-            {
-              icon: Gauge,
-              title: "Performance",
-              desc: "Carregamento instantâneo para não perder o interesse do lead.",
-            },
-            {
-              icon: MousePointerClick,
-              title: "Intuitivo",
-              desc: "Curva de aprendizado zero: focado na sua produtividade real.",
-            },
-            {
-              icon: BarChart3,
-              title: "Controle",
-              desc: "Histórico completo de cada interação feita na sua vitrine.",
-            },
+            { icon: "⚡", title: "Performance", desc: "Carregamento instantâneo" },
+            { icon: "◉", title: "Intuitivo", desc: "Curva de aprendizado zero" },
+            { icon: "◈", title: "Controle", desc: "Histórico completo" },
           ].map((item, i) => (
             <motion.div
               key={item.title}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.15 }}
-              className="text-center"
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              className="border border-neon-hover p-6 md:p-8 text-center bg-secondary/30"
             >
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-primary/10 mb-5">
-                <item.icon className="w-6 h-6 text-primary" strokeWidth={1.5} />
-              </div>
-              <h3 className="text-lg font-bold mb-2 font-display">{item.title}</h3>
-              <p className="text-muted-foreground font-body font-light text-sm leading-relaxed">{item.desc}</p>
+              <span className="text-2xl md:text-3xl mb-4 block">{item.icon}</span>
+              <h3 className="font-display font-bold text-sm md:text-base mb-1">{item.title}</h3>
+              <p className="text-muted-foreground font-mono text-[10px] md:text-xs">{item.desc}</p>
             </motion.div>
           ))}
         </div>
