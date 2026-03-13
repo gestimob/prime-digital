@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,42 +6,40 @@
 
 @layer base {
   :root {
-    --background: 0 0% 7%;
-    --foreground: 40 10% 92%;
+    --background: 240 6% 6%;
+    --foreground: 50 20% 93%;
 
-    --card: 0 0% 10%;
-    --card-foreground: 40 10% 92%;
+    --card: 240 5% 10%;
+    --card-foreground: 50 20% 93%;
 
-    --popover: 0 0% 10%;
-    --popover-foreground: 40 10% 92%;
+    --popover: 240 5% 10%;
+    --popover-foreground: 50 20% 93%;
 
-    --primary: 42 92% 56%;
-    --primary-foreground: 0 0% 7%;
+    --primary: 48 100% 50%;
+    --primary-foreground: 240 6% 6%;
 
-    --secondary: 0 0% 14%;
-    --secondary-foreground: 40 10% 92%;
+    --secondary: 240 5% 13%;
+    --secondary-foreground: 50 20% 93%;
 
-    --muted: 0 0% 16%;
-    --muted-foreground: 0 0% 55%;
+    --muted: 240 4% 18%;
+    --muted-foreground: 240 4% 50%;
 
-    --accent: 42 92% 56%;
-    --accent-foreground: 0 0% 7%;
+    --accent: 48 100% 50%;
+    --accent-foreground: 240 6% 6%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 0 0% 18%;
-    --input: 0 0% 18%;
-    --ring: 42 92% 56%;
+    --border: 240 4% 16%;
+    --input: 240 4% 16%;
+    --ring: 48 100% 50%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
-    --gold: 42 92% 56%;
-    --gold-light: 42 85% 68%;
-    --gold-dark: 42 95% 42%;
-    --surface-elevated: 0 0% 12%;
-    --surface-glass: 0 0% 100% / 0.04;
-    --glow-gold: 0 0 60px hsl(42 92% 56% / 0.15);
+    --neon: 48 100% 50%;
+    --neon-glow: 0 0 8px hsl(48 100% 50% / 0.6), 0 0 20px hsl(48 100% 50% / 0.3), 0 0 40px hsl(48 100% 50% / 0.1);
+    --neon-glow-strong: 0 0 10px hsl(48 100% 50% / 0.8), 0 0 30px hsl(48 100% 50% / 0.4), 0 0 60px hsl(48 100% 50% / 0.2);
+    --neon-glow-subtle: 0 0 6px hsl(48 100% 50% / 0.3), 0 0 15px hsl(48 100% 50% / 0.1);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -67,22 +65,111 @@
 }
 
 @layer utilities {
-  .text-gradient-gold {
+  .text-neon {
+    color: hsl(var(--neon));
+    text-shadow: 0 0 10px hsl(48 100% 50% / 0.5), 0 0 20px hsl(48 100% 50% / 0.2);
+  }
+  .text-gradient-neon {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(var(--gold-light)), hsl(var(--gold)), hsl(var(--gold-dark)));
+    background-image: linear-gradient(135deg, hsl(48 90% 65%), hsl(48 100% 50%), hsl(42 100% 45%));
   }
-  .bg-glass {
-    background: hsl(var(--surface-glass));
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+  .border-neon {
+    border-color: hsl(var(--neon));
+    box-shadow: var(--neon-glow-subtle);
   }
-  .border-glass {
-    border-color: hsl(0 0% 100% / 0.08);
+  .border-neon-strong {
+    border-color: hsl(var(--neon));
+    box-shadow: var(--neon-glow);
   }
-  .glow-gold {
-    box-shadow: var(--glow-gold);
+  .border-neon-hover {
+    border-color: hsl(240 4% 20%);
+    transition: all 0.4s ease;
   }
-  .section-padding {
-    @apply py-24 md:py-32 px-6 md:px-12 lg:px-20;
+  .border-neon-hover:hover {
+    border-color: hsl(var(--neon));
+    box-shadow: var(--neon-glow);
   }
+  .bg-grid {
+    background-image:
+      linear-gradient(hsl(240 4% 14%) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(240 4% 14%) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .bg-dots {
+    background-image: radial-gradient(circle, hsl(240 4% 20%) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+  .glow-dot {
+    box-shadow: var(--neon-glow-strong);
+  }
+  .section-pad {
+    @apply py-20 md:py-32 px-5 md:px-10 lg:px-16;
+  }
+  .neon-line {
+    background: linear-gradient(180deg, hsl(48 100% 50% / 0.8), hsl(48 100% 50% / 0.05));
+  }
+  .neon-btn {
+    @apply relative overflow-hidden bg-primary text-primary-foreground font-display font-bold text-sm tracking-[0.2em] uppercase px-10 py-4 rounded-none;
+    box-shadow: var(--neon-glow);
+    transition: all 0.3s ease;
+  }
+  .neon-btn:hover {
+    box-shadow: var(--neon-glow-strong);
+    transform: translateY(-2px);
+  }
+  .neon-btn-outline {
+    @apply relative overflow-hidden border-2 border-primary text-primary font-display font-bold text-sm tracking-[0.2em] uppercase px-10 py-4 rounded-none bg-transparent;
+    box-shadow: var(--neon-glow-subtle);
+    transition: all 0.3s ease;
+  }
+  .neon-btn-outline:hover {
+    @apply bg-primary text-primary-foreground;
+    box-shadow: var(--neon-glow-strong);
+    transform: translateY(-2px);
+  }
+  .geometric-corner {
+    @apply absolute;
+  }
+  .geometric-corner::before {
+    content: '';
+    @apply absolute w-6 h-6;
+    border-color: hsl(var(--neon));
+  }
+}
+
+/* Scanline effect */
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+.scanline-overlay::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, hsl(48 100% 50% / 0.04), transparent);
+  animation: scanline 8s linear infinite;
+  pointer-events: none;
+  z-index: 100;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(2deg); }
+}
+
+@keyframes pulse-neon {
+  0%, 100% { opacity: 0.5; box-shadow: var(--neon-glow-subtle); }
+  50% { opacity: 1; box-shadow: var(--neon-glow-strong); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-neon {
+  animation: pulse-neon 3s ease-in-out infinite;
 }
