@@ -17,14 +17,14 @@ const ProblemSection = () => {
           >
             <div className="border-l-2 border-primary pl-6 md:pl-8">
               <h2 className="text-3xl md:text-5xl lg:text-6xl font-display font-bold leading-[1.1] mb-6">
-                <span className="text-neon">"Ela não</span>
+                <span className="text-neon">"Clientes e</span>
                 <br />
-                <span className="text-foreground">está mais</span>
+                <span className="text-foreground">leads se perdendo</span>
                 <br />
-                <span className="text-neon">lá."</span>
+                <span className="text-neon">no processo"</span>
               </h2>
               <p className="text-muted-foreground text-lg font-body font-light">
-                Atenção não espera.<br />Leads também não.
+                Imóveis cadastrados em planilhas, documentos espalhados e dificuldade para encontrar informações importantes.
               </p>
             </div>
           </motion.div>
@@ -32,9 +32,11 @@ const ProblemSection = () => {
           {/* Right — content cards */}
           <div className="space-y-4">
             {[
-              "Hoje, a maioria dos corretores depende de grandes portais imobiliários. Eles são parte do jogo. Mas também definem as regras.",
-              "O corretor anuncia, investe, compartilha o link. O tráfego acontece. Mas nem sempre fica.",
-              "Quando um cliente acessa um portal, ele pode simplesmente escolher outro anúncio — e desaparecer do radar.",
+              "Imóveis perdidos em planilhas e conversas de WhatsApp nunca se tornam vendas reais.",
+              "Leads que chegam e não são atendidos em minutos escolhem outro corretor — e você nem fica sabendo.",
+              "Depender apenas de portais é terceirizar o seu faturamento e perder o controle da sua base de clientes.",
+              "Processos manuais que consomem tempo: atividades repetitivas acabam tomando tempo da equipe, reduzindo a produtividade e atrasando negociações.",
+              "Falta de organização dos imóveis: documentos espalhados e dificuldade para encontrar informações importantes.",
             ].map((text, i) => (
               <motion.div
                 key={i}
@@ -42,7 +44,7 @@ const ProblemSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.15 }}
-                className="border border-neon-hover p-5 md:p-6 bg-secondary/50"
+                className="border border-primary/20 p-5 md:p-6 bg-secondary/50 rounded-lg hover:border-primary/40 transition-colors"
               >
                 <div className="flex items-start gap-4">
                   <span className="font-mono text-xs text-primary/60 mt-1 shrink-0">
@@ -60,11 +62,11 @@ const ProblemSection = () => {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="border-2 border-neon p-5 md:p-6 bg-primary/[0.03]"
+              className="border-2 border-neon p-5 md:p-6 bg-primary/[0.03] rounded-lg"
               style={{ boxShadow: "var(--neon-glow)" }}
             >
-              <p className="text-foreground font-mono text-sm italic leading-relaxed">
-                "Nesse modelo, o corretor só conhece quem entra em contato. Todo o resto pertence ao portal."
+              <p className="text-foreground font-mono text-lg italic leading-relaxed text-center">
+                "A desorganização é o ralo por onde escorre a sua comissão todos os meses."
               </p>
             </motion.div>
           </div>

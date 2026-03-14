@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const ContactSection = () => {
   return (
-    <section id="contato" className="section-pad relative overflow-hidden">
+    <section id="contato" className="pt-10 md:pt-16 pb-20 md:pb-32 relative overflow-hidden">
       {/* Glow */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] rounded-full bg-primary/[0.04] blur-[100px] pointer-events-none" />
 
@@ -38,11 +38,9 @@ const ContactSection = () => {
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
           <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" className="neon-btn">
-            Falar Agora
+            QUERO MINHA INDEPENDÊNCIA
           </a>
-          <a href="mailto:contato@primesolucoes.online" className="neon-btn-outline">
-            Enviar E-mail
-          </a>
+
         </motion.div>
 
         {/* Decorative bottom */}

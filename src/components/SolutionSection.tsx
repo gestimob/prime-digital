@@ -35,7 +35,7 @@ const SolutionSection = () => {
         </motion.p>
 
         {/* Big stats row */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-primary/10">
+        <div className="flex justify-between md:grid md:grid-cols-4 gap-2 md:gap-px bg-transparent md:bg-primary/10 px-2 md:px-0">
           {[
             { value: "100%", label: "Controle" },
             { value: "0", label: "Concorrentes" },
@@ -48,14 +48,39 @@ const SolutionSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="bg-background p-6 md:p-8 text-center"
+              className="bg-background md:p-8 text-center flex-1 py-4 px-1"
             >
-              <span className="block text-3xl md:text-4xl font-display font-bold text-neon mb-2">
+              <span className="block text-[1.35rem] sm:text-2xl md:text-4xl font-display font-bold text-neon mb-1 md:mb-2">
                 {stat.value}
               </span>
-              <span className="font-mono text-xs tracking-[0.2em] uppercase text-muted-foreground">
+              <span className="font-mono text-[8.5px] sm:text-[10px] md:text-xs tracking-[0.1em] md:tracking-[0.2em] uppercase text-muted-foreground break-words w-full block">
                 {stat.label}
               </span>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Solutions Cards */}
+        <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 px-4 md:px-0">
+          {[
+            "CRM de clientes",
+            "Gestão de imóveis descomplicada",
+            "Gestão financeira Fácil",
+            "Captação e Gestão de Leads",
+            "Site público integrado",
+            "Integrações com Pixel da Meta Ads e TikTok"
+          ].map((title, i) => (
+            <motion.div
+              key={title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              className="bg-secondary/10 border border-primary/30 hover:border-neon p-5 md:p-8 text-center flex flex-col items-center justify-center min-h-[100px] md:min-h-[120px] transition-all group rounded-md"
+            >
+              <h3 className="font-display font-medium text-[15px] sm:text-base md:text-lg text-foreground/90 group-hover:text-neon transition-colors">
+                {title}
+              </h3>
             </motion.div>
           ))}
         </div>
@@ -67,7 +92,7 @@ const SolutionSection = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="mt-12 flex flex-col sm:flex-row gap-4 justify-center"
         >
-          <a href="#contato" className="neon-btn">
+          <a href="#oferta" className="neon-btn">
             Quero minha vitrine
           </a>
         </motion.div>

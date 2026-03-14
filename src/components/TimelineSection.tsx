@@ -95,12 +95,12 @@ const TimelineSection = () => {
             </span>
           </div>
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-display font-bold mb-6">
-            Tudo que sua vitrine
+            A plataforma que converte
             <br />
-            <span className="text-gradient-neon">precisa para dominar.</span>
+            <span className="text-gradient-neon">presença digital em clientes.</span>
           </h2>
-          <p className="text-muted-foreground text-lg font-body font-light max-w-xl mx-auto">
-            Do primeiro pixel ao último lead — cada detalhe pensado para o corretor de elite.
+          <p className="text-muted-foreground text-lg font-body font-light max-w-2xl mx-auto">
+            Do primeiro clique ao fechamento do negócio, tudo foi projetado para atrair, organizar e converter leads em clientes.
           </p>
         </motion.div>
 
@@ -197,7 +197,7 @@ const TimelineCard = ({
   const Icon = item.icon;
   return (
     <div
-      className={`group border-2 border-neon-hover bg-card/80 p-6 md:p-7 relative transition-all duration-500 hover:bg-primary/[0.03] ${
+      className={`group border border-primary/20 rounded-lg bg-card/80 p-6 md:p-7 relative transition-all duration-500 hover:border-primary hover:shadow-[0_0_30px_rgba(255,191,0,0.15)] hover:bg-primary/[0.05] ${
         align === "right" ? "text-right" : "text-left"
       }`}
     >

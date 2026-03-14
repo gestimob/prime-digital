@@ -23,11 +23,12 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-5 md:px-10 py-4">
         {/* Logo */}
-        <div className="flex items-center gap-2">
-          <div className="w-2 h-2 bg-primary rounded-full glow-dot" />
-          <span className="font-mono font-bold text-sm tracking-[0.3em] uppercase text-neon">
-            PRIME
-          </span>
+        <div className="flex items-center">
+          <img 
+            src="https://nmkxyncyhucsekvumatb.supabase.co/storage/v1/object/public/imoveis/assets/primesolucoes.png" 
+            alt="Prime Digital Logo" 
+            className="h-8 md:h-10 w-auto"
+          />
         </div>
 
         {/* Nav items */}
@@ -43,8 +44,8 @@ const Navbar = () => {
           ))}
         </div>
 
-        <a href="#contato" className="font-mono text-xs tracking-[0.2em] uppercase border border-primary/40 px-5 py-2 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300">
-          Contato
+        <a href="#oferta" className="font-mono text-xs tracking-[0.2em] uppercase border border-primary/40 px-5 py-2 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300">
+          QUERO AGORA
         </a>
       </div>
     </motion.nav>

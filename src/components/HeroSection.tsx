@@ -55,7 +55,7 @@ const HeroSection = () => {
         >
           <span className="w-2 h-2 bg-primary rounded-full animate-pulse-neon" />
           <span className="font-mono text-xs tracking-[0.3em] uppercase text-primary/80">
-            sistema ativo
+            VITRINE DIGITAL PREMIUM
           </span>
         </motion.div>
 
@@ -63,12 +63,12 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.4 }}
-          className="text-4xl md:text-6xl lg:text-8xl font-display font-bold leading-[0.95] tracking-tight mb-8"
+          className="text-4xl md:text-5xl lg:text-7xl font-display font-bold leading-[1.1] tracking-tight mb-8"
         >
-          <span className="block">Sua vitrine</span>
-          <span className="block text-gradient-neon">digital</span>
-          <span className="block text-2xl md:text-4xl lg:text-5xl font-light text-muted-foreground mt-4">
-            no último pavimento.
+          <span className="block">Pare de perder</span>
+          <span className="block text-gradient-neon">clientes e vendas</span>
+          <span className="block text-xl md:text-3xl lg:text-4xl font-light text-muted-foreground mt-4">
+            por falta de organização.
           </span>
         </motion.h1>
 
@@ -76,9 +76,9 @@ const HeroSection = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.8 }}
-          className="font-body text-base md:text-lg text-muted-foreground max-w-xl mx-auto mb-12 font-light"
+          className="font-body text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-12 font-light"
         >
-          Construímos vitrines digitais para corretores que buscam o topo do mercado.
+          Sistema completo com CRM, gestão de imóveis, site integrado e geração automática de leads.
         </motion.p>
 
         <motion.div
@@ -87,11 +87,8 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 1 }}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
-          <a href="#contato" className="neon-btn">
+          <a href="#oferta" className="neon-btn">
             Quero me destacar
-          </a>
-          <a href="#timeline" className="neon-btn-outline">
-            Explorar
           </a>
         </motion.div>
 
