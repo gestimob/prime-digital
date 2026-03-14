@@ -80,7 +80,17 @@ const OfferSection = () => {
             </motion.div>
           ))}
         </div>
-
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mt-16 text-center"
+        >
+          <a href="https://wa.me/5583996254920?text=Olá,%20ví%20a%20página%20da%20Prime%20Soluções%20e%20quero%20saber%20mais." target="_blank" rel="noopener noreferrer" className="neon-btn">
+            QUERO MINHA INDEPENDÊNCIA
+          </a>
+        </motion.div>
 
       </div>
     </section>
